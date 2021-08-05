@@ -1,102 +1,59 @@
-function getValues() 
-{
+function getValues() {
     //1. get value to test Fizz
-    //DO:
-    //Use "let" to declare a variable "fizzValue".  
-    //Assign it the value that you find in the the Html element
-    //with the id "fizzValue".  HINT: Use document.getElementById
-    
-    
+    let fizzValue = document.getElementById("fizzValue").value;
+
     //2. get value to test Buzz
-    //DO:
-    //Use "let" to declare a variable "buzzValue".  
-    //Assign it the value that you find in the the Html element
-    //with the id "buzzValue".  HINT: Use document.getElementById
-    
+    let buzzValue = document.getElementById("buzzValue").value;
+
 
     //3. check for numbers
-    //DO:
-    //Convert "fizzValue" to an integer using parseInt()
+    fizzValue = parseInt(fizzValue);
 
-    
     //4. check for numbers
-    //DO:
-    //Convert "buzzValue" to an integer using parseInt()
+    buzzValue = parseInt(buzzValue);
 
     //5. validate that "fizzValue" and "buzzValue" are actually Numbers.
-    //DO:
-    //Use an "if-else-statement" to test the logical conjunction (AND &&) 
-    //of the Number.isInteger() of "fizzValue" and "buzzValue"
-    {
+    if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
+
         //6. we call generateNumbers
-        //DO:
-        //Use "let" to declare a variable "fbData".
-        //Set it equal to the result of FizzBuzz(fizzValue, buzzValue)
-        
+        let fdArray = FizzBuzz(fizzValue, buzzValue);
         //7. we call displayNumbers
-        //DO:
-        //Call custom function "displayData()" with "fbData" as the parameter
-        //displayData(fbData);
+        displayData(fbArray);
 
     } else {
-        //DO:
-        //Else if "fizzValue" and "buzzValue" are not Numbers
         //send an alert to the user with the message "You must enter integers"
-
+        alert("You must enter integers.");
     }
 
 }
 
-//Traditional Solve Fizz Buzz with a for loop
-function FizzBuzz(value1, value2) {
-    //DO:
-    //Use "let" to declare an array variable "returnArray"
-    //Set it equal to []
+// Fizz Buzz with a for loop
+function fizzBuzz(fizzValue, buzzValue) {
 
-    //DO:
-    //Use "for-loop" to count form 1 to 100 using
+    let returnArray = [];
+
     //"i" as the loop control variable
-    {
-        //DO:
-        //Use an "if-else-statement" to evaluate the parameters
-        //DO:
-        //Use an "if-else-statement" to test each number against the zero modulus(%)
-        //of the parameters "value1" (fizz) and "value2" (buzz) . (ie. i % value1 == 0)
-        //First test whether the case is true for both "value1" AND (&&) "value2"
-        {
-            //DO:
-            //If the AND case is true then "push" the value 'FizzBuzz'
+    for (let index = 1; index <= 100; index++) {
+
+
+        //check if divisible by 3 & 5
+        //check if divisible by fizz(3)
+        //check if divisible by buzz (5)
+        if (i % fizzValue == 0 && i % buzzValue) {
             //onto the "returnArray"
-            
-        } 
-        //DO:
-        //Else test if only the zero modulus(%)
-        //of the "value1" is true
-        {
-            //DO:
-            //If true then "push" the value 'Fizz' onto the "returnArray"
-            
-        } 
-        //DO:
-        //Else test if only the zero modulus(%)
-        //of the "value2" is true
-        {
-            //DO:
-            //If true then "push" the value 'Buzz' onto the "returnArray"
-            
-        } 
-        else
-        {
-            //DO:
-            //Else just push the number "i" onto the "returnArray"
-            
-        } 
+            returnArray.push(`FizzBuzz`);
+        } else if (i % fizzValue == 0) {
+            returnArray.push(`Fizz`);
+        } else if (i % buzzValue == 0) {
+            returnArray.push(`Buzz`);
+        } else {
+            returnArray.push(i);
+        }
     }
-    
-    //DO:
-    //Finally return the variable "returnArray"
-    
+    returnArray;
 }
+
+
 
 //custom display function
 function displayData(fbData) {
@@ -117,17 +74,17 @@ function displayData(fbData) {
 
         rowCols[0].classList.add(fbData[i]);
         rowCols[0].textContent = fbData[i];
-       
-        rowCols[1].classList.add(fbData[i+ 1]);
+
+        rowCols[1].classList.add(fbData[i + 1]);
         rowCols[1].textContent = fbData[i + 1];
-       
-        rowCols[2].classList.add(fbData[i+2]);
+
+        rowCols[2].classList.add(fbData[i + 2]);
         rowCols[2].textContent = fbData[i + 2];
-       
-        rowCols[3].classList.add(fbData[i+3]);
+
+        rowCols[3].classList.add(fbData[i + 3]);
         rowCols[3].textContent = fbData[i + 3];
-       
-        rowCols[4].classList.add(fbData[i+4]);
+
+        rowCols[4].classList.add(fbData[i + 4]);
         rowCols[4].textContent = fbData[i + 4];
 
         tableBody.appendChild(tableRow);
