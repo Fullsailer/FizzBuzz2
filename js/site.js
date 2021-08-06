@@ -50,13 +50,13 @@ function fizzBuzz(fizzValue, buzzValue) {
             returnArray.push(i);
         }
     }
-    returnArray;
+    return returnArray;
 }
 
 
 
 //custom display function
-function displayData(fbData) {
+function displayData(fbArray) {
 
     //get the table body element from the page
     let tableBody = document.getElementById("results");
