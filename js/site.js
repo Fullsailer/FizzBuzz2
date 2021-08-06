@@ -15,11 +15,10 @@ function getValues() {
     //5. validate that "fizzValue" and "buzzValue" are actually Numbers.
     if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
 
-        //6. we call generateNumbers
-        let fdArray = FizzBuzz(fizzValue, buzzValue);
-        //7. we call displayNumbers
+        //call fizzBuzz
+        let fbArray = fizzBuzz(fizzValue, buzzValue);
+        //we call displayData
         displayData(fbArray);
-
     } else {
         //send an alert to the user with the message "You must enter integers"
         alert("You must enter integers.");
@@ -33,7 +32,7 @@ function fizzBuzz(fizzValue, buzzValue) {
     let returnArray = [];
 
     //"i" as the loop control variable
-    for (let index = 1; index <= 100; index++) {
+    for (let i = 1; i <= 100; i++) {
 
 
         //check if divisible by 3 & 5
@@ -55,7 +54,11 @@ function fizzBuzz(fizzValue, buzzValue) {
 
 
 
+<<<<<<< Updated upstream
 //custom display function
+=======
+//loop over array to create a table row for each item
+>>>>>>> Stashed changes
 function displayData(fbArray) {
 
     //get the table body element from the page
@@ -67,7 +70,7 @@ function displayData(fbArray) {
     //clear table first
     tableBody.innerHTML = "";
 
-    for (let i = 0; i < fbData.length; i += 5) {
+    for (let index = 0; index < fbArray.length; index += 5) {
         const tableRow = document.importNode(templateRow.content, true);
         //grab only the columns in the template
         rowCols = tableRow.querySelectorAll("td");
