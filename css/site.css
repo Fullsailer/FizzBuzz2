@@ -65,15 +65,16 @@ main>.container {
 }
 
 .Fizz {
-    color: darkgreen;
+    color: green;
+    font-style: italic;
 }
 
 .Buzz {
-    color: darkorange;
+    color: blue;
 }
 
 .FizzBuzz {
-    color: darkturquoise;
+    color: red;
     font-weight: bold;
 }
 
