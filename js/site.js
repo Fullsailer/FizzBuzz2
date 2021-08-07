@@ -72,14 +72,19 @@ function displayData(fbArray) {
         //grab only the columns in the template
         let rowCols = tableRow.querySelectorAll("td");
 
+        row[0].classList.add(fbArray[index]);
         rowCols[0].textContent = fbArray[index];
-
+        
+        row[1].classList.add(fbArray[index]);
         rowCols[1].textContent = fbArray[index + 1];
-
+        
+        row[2].classList.add(fbArray[index]);
         rowCols[2].textContent = fbArray[index + 2];
-
+        
+        row[3].classList.add(fbArray[index]);
         rowCols[3].textContent = fbArray[index + 3];
-
+        
+        row[4].classList.add(fbArray[index]);
         rowCols[4].textContent = fbArray[index + 4];
 
         tableBody.appendChild(tableRow);
