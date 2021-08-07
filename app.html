@@ -70,11 +70,11 @@
                         <form class="row gy-2 gx-3">
                             <div class="col">
                                 <input id="fizzValue" type="number" class="form-control" placeholder="Fizz Value"
-                                    value="3" aria-label="Start Value">
+                                    value="3" aria-label="Fizz Value">
                             </div>
                             <div class="col">
                                 <input id="buzzValue" type="number" class="form-control" placeholder="Buzz Value"
-                                    value="5" aria-label="End Value">
+                                    value="5" aria-label="Buzz Value">
                             </div>
                             <div class="col-12 d-flex justify-content-end">
                                 <button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Buzz It</button>
@@ -122,7 +122,7 @@
      <!--====Footer Section End====-->
    
 
-    <template id="fbtemplate">
+    <template id="fbTemplate">
         <tr>
             <td></td>
             <td></td>
@@ -140,6 +140,9 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     <script src="js/site.js"></script>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValues)
+    </script>
 
 </body>
 

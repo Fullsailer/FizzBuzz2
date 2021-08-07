@@ -69,11 +69,11 @@ main>.container {
 }
 
 .Buzz {
-    color: darkblue;
+    color: darkorange;
 }
 
 .FizzBuzz {
-    color:red;
+    color: darkturquoise;
     font-weight: bold;
 }
 
