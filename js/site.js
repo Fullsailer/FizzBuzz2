@@ -38,7 +38,7 @@ function fizzBuzz(fizzValue, buzzValue) {
         //check if divisible by 3 & 5
         //check if divisible by fizz(3)
         //check if divisible by buzz (5)
-        if (i % fizzValue == 0 && i % buzzValue) {
+        if (i % fizzValue == 0 && i % buzzValue == 0) {
             //onto the "returnArray"
             returnArray.push(`FizzBuzz`);
         } else if (i % fizzValue == 0) {
@@ -54,11 +54,8 @@ function fizzBuzz(fizzValue, buzzValue) {
 
 
 
-<<<<<<< Updated upstream
 //custom display function
-=======
 //loop over array to create a table row for each item
->>>>>>> Stashed changes
 function displayData(fbArray) {
 
     //get the table body element from the page
@@ -71,24 +68,19 @@ function displayData(fbArray) {
     tableBody.innerHTML = "";
 
     for (let index = 0; index < fbArray.length; index += 5) {
-        const tableRow = document.importNode(templateRow.content, true);
+        let tableRow = document.importNode(templateRow.content, true);
         //grab only the columns in the template
-        rowCols = tableRow.querySelectorAll("td");
+        let rowCols = tableRow.querySelectorAll("td");
 
-        rowCols[0].classList.add(fbData[i]);
-        rowCols[0].textContent = fbData[i];
+        rowCols[0].textContent = fbArray[index];
 
-        rowCols[1].classList.add(fbData[i + 1]);
-        rowCols[1].textContent = fbData[i + 1];
+        rowCols[1].textContent = fbArray[index + 1];
 
-        rowCols[2].classList.add(fbData[i + 2]);
-        rowCols[2].textContent = fbData[i + 2];
+        rowCols[2].textContent = fbArray[index + 2];
 
-        rowCols[3].classList.add(fbData[i + 3]);
-        rowCols[3].textContent = fbData[i + 3];
+        rowCols[3].textContent = fbArray[index + 3];
 
-        rowCols[4].classList.add(fbData[i + 4]);
-        rowCols[4].textContent = fbData[i + 4];
+        rowCols[4].textContent = fbArray[index + 4];
 
         tableBody.appendChild(tableRow);
     }
